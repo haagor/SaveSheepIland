@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://fahwja4dqo2g"]
+
+[ext_resource type="Texture2D" uid="uid://dbjqbvthqx3ci" path="res://assets/Tiny Swords/Resources/Trees/Tree.png" id="1_ak7p8"]
+[ext_resource type="Script" path="res://scripts/tree.gd" id="1_rwhxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8naf"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b2pi"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ntpk"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejtyc"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohtjy"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oam0e"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6bbn"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oo6v"]
+atlas = ExtResource("1_ak7p8")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrmjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8naf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b2pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ntpk")
+}],
+"loop": true,
+"name": &"being_cut",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejtyc")
+}],
+"loop": true,
+"name": &"chopped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohtjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oam0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6bbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oo6v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kmvn1"]
+radius = 12.0
+
+[node name="tree" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_rwhxq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xrmjg")
+animation = &"chopped"
+offset = Vector2(0, -68.24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kmvn1")
