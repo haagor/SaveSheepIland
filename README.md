@@ -7,7 +7,7 @@ Decouvrir plusieurs outils de ce logiciel pour avoir un petit aperçu de ce que 
 
 Je me suis appuyé sur le visiuel créée par [Pixelfrog](https://pixelfrog-assets.itch.io/tiny-swords) appelé Tiny Swords.
 
-J'ai donc eplorer:
+J'ai donc explorer:
 - creation de map
 - collision
 - mouvement du joueur
